@@ -22,6 +22,7 @@
 
 <div style="position: fixed;top: 10px;width: 100%;text-align: center;z-index: 1;">
     <button class="button" id="btn01">Play Video</button>
+    <button class="button" id="btn02">Stop Video</button>
 </div>
 
 <body style='margin : 0px; overflow: hidden;'>
@@ -35,6 +36,9 @@
             <script>
                 document.getElementById("btn01").addEventListener("click", (e) => {
                     var v = document.querySelector("#myvideo").play();
+                })
+                document.getElementById("btn02").addEventListener("click", (e) => {
+                    var v = document.querySelector("#myvideo").pauce();
                 })
             </script>
         </a-marker>
