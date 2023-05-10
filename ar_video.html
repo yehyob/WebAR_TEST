@@ -28,14 +28,13 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
 <body style='margin : 0px; overflow: hidden;'>
-    <a-scene renderer="logarithmicDepthBuffer: true; precision: medium;" embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+    <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 
         <!-- <a-marker type='pattern' url='assets/pattern-marker.patt'> -->
-        <a-nft type="nft" url="./assets/trex-image/trex" smooth="true" smoothCount="10" smoothTolerance=".1" smoothThreshold="5">
-            <a-entity position='150 300 -100' rotation="270 0 0" scale="5 5 5" gltf-model="url(assets/bird.gltf)"></a-entity>
+        <a-nft type="nft" url="assets/trex-image/trex" smooth="true" smoothCount="10" smoothTolerance=".1" smoothThreshold="5">
+            <a-entity position='0 0 0' rotation="270 0 0" scale="5 5 5" gltf-model="url(assets/bird.gltf)"></a-entity>
             <!-- <video id="myvideo" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" muted="true" src="assets/heroin_light.mp4"></video>
             <a-video src="#myvideo" width="9" height="16" scale="0.15 0.15 0.15" position="0 -2 -1.5" rotation="-90 0 0" play="true"></a-video> -->
-            <!-- <a-videosphere src="#myvideo" width="9" height="16" scale="0.1 0.1 0.1" position="0 -2 -1.5" rotation="-90 0 0" webkit-playsinline></a-videosphere> -->
             <!-- <script>
                 document.getElementById("btn01").addEventListener("click", (e) => {
                     var v = document.querySelector("#myvideo").play();
