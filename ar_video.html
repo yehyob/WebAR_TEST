@@ -27,9 +27,10 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
 <body style='margin : 0px; overflow: hidden;'>
-    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
+    <a-scene renderer="logarithmicDepthBuffer: true;" embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 
-        <a-marker type='pattern' url='assets/pattern-marker.patt'>
+        <!-- <a-marker type='pattern' url='assets/pattern-marker.patt'> -->
+        <a-nft type="nft" url="assets/heroin_nft/heroin_nft" smooth="true" smoothCount="10" smoothTolerance=".1" smoothThreshold="5">
             <!-- <a-entity position='0 0 -1' rotation="270 0 0" scale="0.5 0.5 0.5" gltf-model="url(assets/bird.gltf)"></a-entity> -->
             <video id="myvideo" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" muted="true" src="assets/heroin_light.mp4"></video>
             <a-video src="#myvideo" width="9" height="16" scale="0.15 0.15 0.15" position="0 -2 -1.5" rotation="-90 0 0" play="true"></a-video>
@@ -42,7 +43,8 @@
                     var v = document.querySelector("#myvideo").pause();
                 })
             </script>
-        </a-marker>
+        </a-nft>
+        <!-- </a-marker> -->
     </a-scene>
 
 </body>
