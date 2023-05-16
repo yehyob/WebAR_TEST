@@ -1,4 +1,5 @@
-<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1.3.0/dist/aframe-master.min.js"></script>
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 
 <style>
@@ -40,7 +41,7 @@
 
 <div style="position: fixed;top: 10px;width: 100%;text-align: center;z-index: 1;">
     <button class="button" id="btn01">Play Video</button>
-    <button class="button" id="btn02">Stop Video</button>
+    <!-- <button class="button" id="btn02">Stop Video</button> -->
 </div>
 
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -56,15 +57,16 @@
         <a-nft type='nft' url='https://yehyob.github.io/WebAR_TEST/assets/nft/heroin_nft/heroin_nft' smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
             <!-- <a-entity gltf-model='./assets/bird.gltf' scale="5 5 5" position="150 300 -100">
             </a-entity> -->
-            <video id="myvideo" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" muted="true" src="assets/videos/01_heroin.mp4"></video>
-            <a-video src="#myvideo" width="9" height="16" scale="35 35 35" position="0 0 0" rotation="-90 0 0" play="true"></a-video>
+            <video id="myvideo" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" muted="true" src="assets/videos/02_cocaine.mp4"></video>
+            <!-- <a-video src="#myvideo" width="9" height="16" scale="35 35 35" position="0 0 0" rotation="-90 0 0" play="true"></a-video> -->
+            <a-video material="shader: chromakey; src: #myvideo; color: 0 0 0" width="9" height="16" scale="35 35 35" position="0 0 0" rotation="-90 0 0" play="true"></a-video>
             <script>
                 document.getElementById("btn01").addEventListener("click", (e) => {
-                    var v = document.querySelector("#myvideo").play();
-                })
-                document.getElementById("btn02").addEventListener("click", (e) => {
-                    var v = document.querySelector("#myvideo").pause();
-                })
+                        var v = document.querySelector("#myvideo").play();
+                    })
+                    // document.getElementById("btn02").addEventListener("click", (e) => {
+                    //     var v = document.querySelector("#myvideo").pause();
+                    // })
             </script>
         </a-nft>
         <!-- <a-entity camera></a-entity> -->
