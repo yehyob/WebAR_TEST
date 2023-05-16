@@ -53,10 +53,10 @@
     <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true; precision: medium;" embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 
         <!-- use rawgithack to retrieve the correct url for nft marker (see 'pinball' below) -->
-        <a-nft type='nft' url='https://yehyob.github.io/WebAR_TEST/assets/heroin_nft/heroin_nft' smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
+        <a-nft type='nft' url='https://yehyob.github.io/WebAR_TEST/assets/nft/heroin_nft/heroin_nft' smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
             <!-- <a-entity gltf-model='./assets/bird.gltf' scale="5 5 5" position="150 300 -100">
             </a-entity> -->
-            <video id="myvideo" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" muted="true" src="assets/heroin_light.mp4"></video>
+            <video id="myvideo" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" muted="true" src="assets/videos/01_heroin.mp4"></video>
             <a-video src="#myvideo" width="9" height="16" scale="35 35 35" position="0 -20 -20" rotation="-90 0 0" play="true"></a-video>
             <script>
                 document.getElementById("btn01").addEventListener("click", (e) => {
