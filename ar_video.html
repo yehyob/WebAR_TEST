@@ -1,5 +1,5 @@
 <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-<script src="https://unpkg.com/aframe-transparent-video-shader@1.0.3/dist/aframe-transparent-video-shader.umd.js"></script>
+<script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script>
 <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script> -->
 
@@ -34,10 +34,8 @@
         <a-marker type='pattern' url='assets/marker/pattern-marker.patt'>
             <!-- <a-entity position='0 0 0' rotation="270 0 0" scale="5 5 5" gltf-model="url(assets/test_model/bird.gltf)"></a-entity> -->
             <video id="myvideo" crossOrigin="anonymous" playsinline webkit-playsinline autoplay loop="true" controls="true" muted="true" src="assets/videos/01_heroin.webm"></video>
-            <!-- <a-video src="#myvideo" material="shader: transparent-video" width="9" height="16" scale="0.15 0.15 0.15" position="0 -2 -1.5" rotation="-90 0 0" play="true"></a-video> -->
-            <a-entity material="shader: transparent-video; src: #myvideo" geometry="primitive: plane;
-                  width: 9; height: 16" scale="0.15 0.15 0.15" position="0 -2 -1.5" rotation="-90 0 0">
-            </a-entity>
+            <!-- <a-video src="#myvideo" width="9" height="16" scale="0.15 0.15 0.15" position="0 -2 -1.5" rotation="-90 0 0" play="true"></a-video> -->
+            <a-video material="shader: chromakey; src: #video; color: 0 0 1" width="9" height="16" scale="0.15 0.15 0.15" position="0 -2 -1.5" rotation="-90 0 0" play="true"></a-video>
             <script>
                 document.getElementById("btn01").addEventListener("click", (e) => {
                     var v = document.querySelector("#myvideo").play();
