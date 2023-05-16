@@ -33,9 +33,9 @@
 
         <a-marker type='pattern' url='assets/marker/pattern-marker.patt'>
             <!-- <a-entity position='0 0 0' rotation="270 0 0" scale="5 5 5" gltf-model="url(assets/test_model/bird.gltf)"></a-entity> -->
-            <video id="myvideo" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" muted="true" src="assets/videos/01_heroin_test_5.mp4"></video>
+            <video id="myvideo" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" muted="true" src="assets/videos/01_heroin_test_3000.mp4"></video>
             <!-- <a-video src="#myvideo" width="9" height="16" scale="0.15 0.15 0.15" position="0 -2 -1.5" rotation="-90 0 0" play="true"></a-video> -->
-            <a-video material="shader: chromakey; src: #myvideo; color: 1 0 1" width="1" height="1" scale="5 5 5" position="0 -2 -1.5" rotation="-90 0 0" play="true"></a-video>
+            <a-video material="shader: chromakey; src: #myvideo; color: 0.32 0 0.3" width="1" height="1" scale="2.5 2.5 2.5" position="0 -2 -1.5" rotation="-90 0 0" play="true"></a-video>
             <script>
                 document.getElementById("btn01").addEventListener("click", (e) => {
                     var v = document.querySelector("#myvideo").play();
