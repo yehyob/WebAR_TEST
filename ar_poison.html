@@ -31,12 +31,12 @@
     <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true; precision: medium;" embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
         <!-- 01 Heroin -->
         <a-nft type='nft' url='https://yehyob.github.io/WebAR_TEST/assets/nft/heroin_nft/heroin_nft' smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
-            <video id="myvideo_heroin" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" muted="false" src="assets/videos/01_heroin.mp4"></video>
+            <video id="myvideo_heroin" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" muted="true" src="assets/videos/01_heroin.mp4"></video>
             <a-video material="shader: chromakey; src: #myvideo_heroin; color: 1 0 1" width="16" height="16" scale="35 35 35" position="0 0 -10" rotation="-90 0 0" play="true"></a-video>
         </a-nft>
         <!-- 02 Cocaine -->
         <a-nft type='nft' url='https://yehyob.github.io/WebAR_TEST/assets/nft/cocaine_nft/cocaine_nft' smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
-            <video id="myvideo_cocaine" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" muted="false" src="assets/videos/02_cocaine.mp4"></video>
+            <video id="myvideo_cocaine" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" muted="true" src="assets/videos/02_cocaine.mp4"></video>
             <a-video material="shader: chromakey; src: #myvideo_cocaine; color: 1 0 1" width="16" height="16" scale="35 35 35" position="0 0 -10" rotation="-90 0 0" play="true"></a-video>
         </a-nft>
         <!-- 03 Mdma -->
@@ -77,9 +77,7 @@
             // })
             document.body.addEventListener("click", (e) => {
                 var v1 = document.querySelector("#myvideo_heroin").play();
-                v1.muted = false;
                 var v2 = document.querySelector("#myvideo_cocaine").play();
-                v2.muted = false;
                 var v3 = document.querySelector("#myvideo_mdma").play();
                 var v4 = document.querySelector("#myvideo_amphetamine").play();
                 // var v5 = document.querySelector("#myvideo_marijuana").play();
