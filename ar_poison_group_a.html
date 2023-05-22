@@ -4,6 +4,25 @@
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 
 <style>
+    .arjs-loader {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .arjs-loader div {
+        text-align: center;
+        font-size: 1.25em;
+        color: white;
+    }
+    
     .button {
         background-color: green;
         border: none;
@@ -28,6 +47,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
 <body style='margin : 0px; overflow: hidden;'>
+    <div class="arjs-loader">
+        <div>Loading, please wait...</div>
+    </div>
     <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true; precision: medium;" embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
         <!-- 01 Heroin -->
         <a-nft type='nft' url='https://yehyob.github.io/WebAR_TEST/assets/nft/heroin_nft/heroin_nft' smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
@@ -38,6 +60,11 @@
         <a-nft type='nft' url='https://yehyob.github.io/WebAR_TEST/assets/nft/cocaine_nft/cocaine_nft' smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
             <video id="myvideo_cocaine" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" muted="true" src="assets/videos/02_cocaine.mp4"></video>
             <a-video material="shader: chromakey; src: #myvideo_cocaine; color: 1 0 1" width="16" height="16" scale="35 35 35" position="120 -30 -100" rotation="-90 0 0" play="true"></a-video>
+        </a-nft>
+        <!-- 03 Mdma -->
+        <a-nft type='nft' url='https://yehyob.github.io/WebAR_TEST/assets/nft/mdma_nft/mdma_nft' smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
+            <video id="myvideo_mdma" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" muted="true" src="assets/videos/03_mdma.mp4"></video>
+            <a-video material="shader: chromakey; src: #myvideo_mdma; color: 1 0 1" width="16" height="16" scale="35 35 35" position="120 -30 -100" rotation="-90 0 0" play="true"></a-video>
         </a-nft>
 
         <script>
