@@ -57,7 +57,8 @@
                 console.log("found body")
             })
             document.querySelector("#body_addict").addEventListener("markerLost", (e) => {
-                var v1 = document.querySelector("#myvideo_body_addict").stop();
+                var v1 = document.querySelector("#myvideo_body_addict").pause();
+                v.currentTime = 0;
                 console.log("lost body")
             })
             document.querySelector("#mind_addict").addEventListener("markerFound", (e) => {
@@ -68,7 +69,8 @@
                 console.log("found mind")
             })
             document.querySelector("#mind_addict").addEventListener("markerLost", (e) => {
-                var v1 = document.querySelector("#myvideo_mind_addict").stop();
+                var v1 = document.querySelector("#myvideo_mind_addict").pause();
+                v.currentTime = 0;
                 console.log("lost mind")
             })
         </script>
