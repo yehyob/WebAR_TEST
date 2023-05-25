@@ -52,24 +52,54 @@
     </div>
     <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true; precision: medium;" embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
         <!-- 07 Body Addict -->
-        <a-nft type='nft' url='https://yehyob.github.io/WebAR_TEST/assets/nft/body_addict_nft/body_addict_nft' smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
+        <a-nft type='nft' id="body_addict" url='https://yehyob.github.io/WebAR_TEST/assets/nft/body_addict_nft/body_addict_nft' smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
             <video id="myvideo_body_addict" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" src="assets/videos/07_body_addict.mp4"></video>
             <a-video material="shader: chromakey; src: #myvideo_body_addict; color: 0 1 0" width="16" height="16" scale="35 35 35" position="130 -30 -100" rotation="-90 0 0" play="true"></a-video>
         </a-nft>
         <!-- 08 Mind Addict -->
-        <a-nft type='nft' url='https://yehyob.github.io/WebAR_TEST/assets/nft/mind_addict_nft/mind_addict_nft' smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
-            <video id="myvideo_mind_addict" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" muted="true" src="assets/videos/08_mind_addict.mp4"></video>
+        <a-nft type='nft' id="mind_addict" url='https://yehyob.github.io/WebAR_TEST/assets/nft/mind_addict_nft/mind_addict_nft' smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
+            <video id="myvideo_mind_addict" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" src="assets/videos/08_mind_addict.mp4"></video>
             <a-video material="shader: chromakey; src: #myvideo_mind_addict; color: 0 1 0" width="16" height="16" scale="35 35 35" position="130 -30 -100" rotation="-90 0 0" play="true"></a-video>
         </a-nft>
 
         <script>
-            document.getElementById("btnPlay").addEventListener("click", (e) => {
-                var v1 = document.querySelector("#myvideo_body_addict").play();
-                var v2 = document.querySelector("#myvideo_mind_addict").play();
+            // document.getElementById("btnPlay").addEventListener("click", (e) => {
+            //     var v1 = document.querySelector("#myvideo_body_addict").play();
+            //     var v2 = document.querySelector("#myvideo_mind_addict").play();
+            // })
+            // document.body.addEventListener("click", (e) => {
+            //     var v1 = document.querySelector("#myvideo_body_addict").play();
+            //     var v2 = document.querySelector("#myvideo_mind_addict").play();
+            // })
+
+            document.querySelector("#body_addict").addEventListener("markerFound", (e) => {
+                var btn = document.getElementById("btnPlay").addEventListener("click", (e) => {
+                    var vB = document.querySelector("#myvideo_body_addict").play();
+                })
+                var btnScreen = document.body.addEventListener("click", (e) => {
+                    var vS = document.querySelector("#myvideo_body_addict").play();
+                })
+                var v = document.querySelector("#myvideo_body_addict").play();
+                console.log("body_addict found")
             })
-            document.body.addEventListener("click", (e) => {
-                var v1 = document.querySelector("#myvideo_body_addict").play();
-                var v2 = document.querySelector("#myvideo_mind_addict").play();
+            document.querySelector("#body_addict").addEventListener("markerLost", (e) => {
+                var v = document.querySelector("#myvideo_body_addict").pause();
+                console.log("body_addict lost")
+            })
+
+            document.querySelector("#mind_addict").addEventListener("markerFound", (e) => {
+                var btn = document.getElementById("btnPlay").addEventListener("click", (e) => {
+                    var vB = document.querySelector("#myvideo_mind_addict").play();
+                })
+                var btnScreen = document.body.addEventListener("click", (e) => {
+                    var vS = document.querySelector("#myvideo_mind_addict").play();
+                })
+                var v = document.querySelector("#myvideo_mind_addict").play();
+                console.log("mind_addict found")
+            })
+            document.querySelector("#mind_addict").addEventListener("markerLost", (e) => {
+                var v = document.querySelector("#myvideo_mind_addict").pause();
+                console.log("mind_addict lost")
             })
         </script>
     </a-scene>
