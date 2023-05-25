@@ -50,9 +50,11 @@
                 var v2 = document.querySelector("#myvideo_mind_addict").play();
             })
             document.querySelector("a-nft").addEventListener("markerFound", (e) => {
+                var v1 = document.querySelector("#myvideo_body_addict").play();
                 console.log("found")
             })
             document.querySelector("a-nft").addEventListener("markerLost", (e) => {
+                var v1 = document.querySelector("#myvideo_body_addict").pause();
                 console.log("lost")
             })
         </script>
