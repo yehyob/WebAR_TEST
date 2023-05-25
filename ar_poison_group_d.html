@@ -49,11 +49,11 @@
                 var v1 = document.querySelector("#myvideo_body_addict").play();
                 var v2 = document.querySelector("#myvideo_mind_addict").play();
             })
-            document.querySelector("body_addict").addEventListener("markerFound", (e) => {
+            document.querySelector("#body_addict").addEventListener("markerFound", (e) => {
                 var v1 = document.querySelector("#myvideo_body_addict").play();
                 console.log("found")
             })
-            document.querySelector("body_addict").addEventListener("markerLost", (e) => {
+            document.querySelector("#body_addict").addEventListener("markerLost", (e) => {
                 var v1 = document.querySelector("#myvideo_body_addict").pause();
                 console.log("lost")
             })
