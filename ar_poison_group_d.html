@@ -51,25 +51,25 @@
             })
             document.querySelector("#body_addict").addEventListener("markerFound", (e) => {
                 var btn = document.getElementById("btnPlay").addEventListener("click", (e) => {
-                    var v = document.querySelector("#myvideo_body_addict").play();
+                    var vB = document.querySelector("#myvideo_body_addict").play();
                 })
-                var v1 = document.querySelector("#myvideo_body_addict").play();
+                var v = document.querySelector("#myvideo_body_addict").play();
                 console.log("found body")
             })
             document.querySelector("#body_addict").addEventListener("markerLost", (e) => {
-                var v1 = document.querySelector("#myvideo_body_addict").pause();
+                var v = document.querySelector("#myvideo_body_addict").pause();
                 v.currentTime = 0;
                 console.log("lost body")
             })
             document.querySelector("#mind_addict").addEventListener("markerFound", (e) => {
                 var btn = document.getElementById("btnPlay").addEventListener("click", (e) => {
-                    var v = document.querySelector("#myvideo_mind_addict").play();
+                    var vB = document.querySelector("#myvideo_mind_addict").play();
                 })
-                var v1 = document.querySelector("#myvideo_mind_addict").play();
+                var v = document.querySelector("#myvideo_mind_addict").play();
                 console.log("found mind")
             })
             document.querySelector("#mind_addict").addEventListener("markerLost", (e) => {
-                var v1 = document.querySelector("#myvideo_mind_addict").pause();
+                var v = document.querySelector("#myvideo_mind_addict").pause();
                 v.currentTime = 0;
                 console.log("lost mind")
             })
