@@ -1,6 +1,8 @@
-# WebAR_TEST
+# WebAR TEST
 
-all tracking images are in assets/image
+nft-image and videos are in folder [assets]
+
+all tracking images are in folder [image]
 
 ## Group A
 
