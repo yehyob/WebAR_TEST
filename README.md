@@ -25,4 +25,3 @@ all tracking images are in folder [image]
 - K他命
 
 - 大麻
-
