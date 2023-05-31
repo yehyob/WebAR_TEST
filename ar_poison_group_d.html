@@ -57,14 +57,9 @@
             <a-video material="shader: chromakey; src: #myvideo_heroin; color: 1 0 1" width="1488" height="1488" scale="0.35 0.35 0.35" position="70 0 -125" rotation="-90 0 0" play="true"></a-video>
         </a-nft>
         <!-- 02 Cocaine -->
-        <a-nft type='nft' id="cocaine" url='https://yehyob.github.io/WebAR_TEST/assets/nft/cacaine_colorful_nft/cacaine_colorful_nft' smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
+        <a-nft type='nft' id="cocaine" url='https://yehyob.github.io/WebAR_TEST/assets/nft/cacaine_nft/cacaine_nft' smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
             <video id="myvideo_cocaine" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" src="assets/videos/02_cocaine.mp4"></video>
             <a-video material="shader: chromakey; src: #myvideo_cocaine; color: 1 0 1" width="1488" height="1488" scale="0.35 0.35 0.35" position="70 0 -125" rotation="-90 0 0" play="true"></a-video>
-        </a-nft>
-        <!-- 04 Amphetamine -->
-        <a-nft type='nft' id="amphetamine" url='https://yehyob.github.io/WebAR_TEST/assets/nft/amphetamine_nft/amphetamine_nft' smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
-            <video id="myvideo_amphetamine" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" src="assets/videos/04_amphetamine.mp4"></video>
-            <a-video material="shader: chromakey; src: #myvideo_amphetamine; color: 1 0 1" width="1488" height="1488" scale="0.35 0.35 0.35" position="70 0 -125" rotation="-90 0 0" play="true"></a-video>
         </a-nft>
 
         <script>
@@ -106,21 +101,6 @@
             document.querySelector("#cocaine").addEventListener("markerLost", (e) => {
                 var v = document.querySelector("#myvideo_cocaine").pause();
                 console.log("cocaine lost")
-            })
-
-            document.querySelector("#amphetamine").addEventListener("markerFound", (e) => {
-                var btn = document.getElementById("btnPlay").addEventListener("click", (e) => {
-                    var vB = document.querySelector("#myvideo_amphetamine").play();
-                })
-                var btnScreen = document.body.addEventListener("click", (e) => {
-                    var vS = document.querySelector("#myvideo_amphetamine").play();
-                })
-                var v = document.querySelector("#myvideo_amphetamine").play();
-                console.log("amphetamine found")
-            })
-            document.querySelector("#amphetamine").addEventListener("markerLost", (e) => {
-                var v = document.querySelector("#myvideo_amphetamine").pause();
-                console.log("amphetamine lost")
             })
         </script>
         <a-entity camera></a-entity>
