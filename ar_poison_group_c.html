@@ -1,0 +1,130 @@
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
+<!-- <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script> -->
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+
+<style>
+    .arjs-loader {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .arjs-loader div {
+        text-align: center;
+        font-size: 1.25em;
+        color: white;
+    }
+    
+    .button {
+        background-color: green;
+        border: none;
+        color: white;
+        padding: 7px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 12px;
+        border: 2px solid rgba(9, 148, 28, 0.54);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0 0.19);
+    }
+</style>
+
+<div style="position: fixed;top: 10px;width: 100%;text-align: center;z-index: 1;">
+    <button class="button" id="btnPlay">Play Video</button>
+</div>
+
+<meta charset="utf-8" name="apple-mobile-web-app-capable" content="yes">
+
+<body style='margin : 0px; overflow: hidden;'>
+    <div class="arjs-loader">
+        <div>Loading...</div>
+    </div>
+    <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true; precision: medium;" embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+        <!-- 03 Mdma -->
+        <a-nft type='nft' id="mdma" url='https://yehyob.github.io/WebAR_TEST/assets/nft/mdma_nft/mdma_nft' smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
+            <video id="myvideo_mdma" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" src="assets/videos/03_mdma.mp4"></video>
+            <a-video material="shader: chromakey; src: #myvideo_mdma; color: 0 1 0" width="1488" height="1488" scale="0.35 0.35 0.35" position="70 0 -125" rotation="-90 0 0" play="true"></a-video>
+        </a-nft>
+        <!-- 05 Marijuana -->
+        <a-nft type='nft' id="marijuana" url='https://yehyob.github.io/WebAR_TEST/assets/nft/marijuana_nft/marijuana_nft' smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
+            <video id="myvideo_marijuana" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" src="assets/videos/05_marijuana.mp4"></video>
+            <a-video material="shader: chromakey; src: #myvideo_marijuana; color: 1 0 1" width="1488" height="1488" scale="0.4 0.4 0.4" position="70 0 -125" rotation="-90 0 0" play="true"></a-video>
+        </a-nft>
+        <!-- 06 Ketamine -->
+        <a-nft type='nft' id="ketamine" url='https://yehyob.github.io/WebAR_TEST/assets/nft/ketamine_nft/ketamine_nft' smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
+            <video id="myvideo_ketamine" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" src="assets/videos/06_ketamine.mp4"></video>
+            <a-video material="shader: chromakey; src: #myvideo_ketamine; color: 1 0 1" width="1488" height="1488" scale="0.4 0.4 0.4" position="70 0 -125" rotation="-90 0 0" play="true"></a-video>
+        </a-nft>
+
+        <script>
+            // document.getElementById("btnPlay").addEventListener("click", (e) => {
+            //     var v1 = document.querySelector("#myvideo_mdma").play();
+            //     var v2 = document.querySelector("#myvideo_marijuana").play();
+            //     var v3 = document.querySelector("#myvideo_ketamine").play();
+            // })
+            // document.body.addEventListener("click", (e) => {
+            //     var v1 = document.querySelector("#myvideo_mdma").play();
+            //     var v2 = document.querySelector("#myvideo_marijuana").play();
+            //     var v3 = document.querySelector("#myvideo_ketamine").play();
+            // })
+
+            document.querySelector("#mdma").addEventListener("markerFound", (e) => {
+                var btn = document.getElementById("btnPlay").addEventListener("click", (e) => {
+                    var vB = document.querySelector("#myvideo_mdma").play();
+                })
+                var btnScreen = document.body.addEventListener("click", (e) => {
+                    var vS = document.querySelector("#myvideo_mdma").play();
+                })
+                var v = document.querySelector("#myvideo_mdma").play();
+                console.log("mdma found")
+            })
+            document.querySelector("#mdma").addEventListener("markerLost", (e) => {
+                var v = document.querySelector("#myvideo_mdma").pause();
+                console.log("mdma lost")
+            })
+
+            document.querySelector("#marijuana").addEventListener("markerFound", (e) => {
+                var btn = document.getElementById("btnPlay").addEventListener("click", (e) => {
+                    var vB = document.querySelector("#myvideo_marijuana").play();
+                })
+                var btnScreen = document.body.addEventListener("click", (e) => {
+                    var vS = document.querySelector("#myvideo_marijuana").play();
+                })
+                var v = document.querySelector("#myvideo_marijuana").play();
+                console.log("marijuana found")
+            })
+            document.querySelector("#marijuana").addEventListener("markerLost", (e) => {
+                var v = document.querySelector("#myvideo_marijuana").pause();
+                console.log("marijuana lost")
+            })
+
+            document.querySelector("#ketamine").addEventListener("markerFound", (e) => {
+                var btn = document.getElementById("btnPlay").addEventListener("click", (e) => {
+                    var vB = document.querySelector("#myvideo_ketamine").play();
+                })
+                var btnScreen = document.body.addEventListener("click", (e) => {
+                    var vS = document.querySelector("#myvideo_ketamine").play();
+                })
+                var v = document.querySelector("#myvideo_ketamine").play();
+                console.log("ketamine found")
+            })
+            document.querySelector("#ketamine").addEventListener("markerLost", (e) => {
+                var v = document.querySelector("#myvideo_ketamine").pause();
+                console.log("ketamine lost")
+            })
+        </script>
+        <a-entity camera></a-entity>
+    </a-scene>
+
+</body>

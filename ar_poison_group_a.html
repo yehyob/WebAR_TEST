@@ -1,0 +1,108 @@
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
+<!-- <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script> -->
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+
+<style>
+    .arjs-loader {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .arjs-loader div {
+        text-align: center;
+        font-size: 1.25em;
+        color: white;
+    }
+    
+    .button {
+        background-color: green;
+        border: none;
+        color: white;
+        padding: 7px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 12px;
+        border: 2px solid rgba(9, 148, 28, 0.54);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0 0.19);
+    }
+</style>
+
+<div style="position: fixed;top: 10px;width: 100%;text-align: center;z-index: 1;">
+    <button class="button" id="btnPlay">Play Video</button>
+</div>
+
+<meta charset="utf-8" name="apple-mobile-web-app-capable" content="yes">
+
+<body style='margin : 0px; overflow: hidden;'>
+    <div class="arjs-loader">
+        <div>Loading...</div>
+    </div>
+    <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true; precision: medium;" embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+        <!-- 07 Body Addict -->
+        <a-nft type='nft' id="body_addict" url='https://yehyob.github.io/WebAR_TEST/assets/nft/body_addict_nft/body_addict_nft' smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
+            <video id="myvideo_body_addict" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" src="assets/videos/07_body_addict.mp4"></video>
+            <a-video material="shader: chromakey; src: #myvideo_body_addict; color: 0 1 0" width="1488" height="1488" scale="0.2 0.2 0.2" position="110 -100 -135" rotation="-90 0 0" play="true"></a-video>
+        </a-nft>
+        <!-- 08 Mind Addict -->
+        <a-nft type='nft' id="mind_addict" url='https://yehyob.github.io/WebAR_TEST/assets/nft/mind_addict_nft/mind_addict_nft' smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
+            <video id="myvideo_mind_addict" crossOrigin="anonymous" type="video/mp4" playsinline webkit-playsinline autoplay loop="true" controls="true" src="assets/videos/08_mind_addict.mp4"></video>
+            <a-video material="shader: chromakey; src: #myvideo_mind_addict; color: 0 1 0" width="1488" height="1488" scale="0.2 0.2 0.2" position="110 -100 -135" rotation="-90 0 0" play="true"></a-video>
+        </a-nft>
+
+        <script>
+            // document.getElementById("btnPlay").addEventListener("click", (e) => {
+            //     var v1 = document.querySelector("#myvideo_body_addict").play();
+            //     var v2 = document.querySelector("#myvideo_mind_addict").play();
+            // })
+            // document.body.addEventListener("click", (e) => {
+            //     var v1 = document.querySelector("#myvideo_body_addict").play();
+            //     var v2 = document.querySelector("#myvideo_mind_addict").play();
+            // })
+
+            document.querySelector("#body_addict").addEventListener("markerFound", (e) => {
+                var btn = document.getElementById("btnPlay").addEventListener("click", (e) => {
+                    var vB = document.querySelector("#myvideo_body_addict").play();
+                })
+                var btnScreen = document.body.addEventListener("click", (e) => {
+                    var vS = document.querySelector("#myvideo_body_addict").play();
+                })
+                var v = document.querySelector("#myvideo_body_addict").play();
+                console.log("body_addict found")
+            })
+            document.querySelector("#body_addict").addEventListener("markerLost", (e) => {
+                var v = document.querySelector("#myvideo_body_addict").pause();
+                console.log("body_addict lost")
+            })
+
+            document.querySelector("#mind_addict").addEventListener("markerFound", (e) => {
+                var btn = document.getElementById("btnPlay").addEventListener("click", (e) => {
+                    var vB = document.querySelector("#myvideo_mind_addict").play();
+                })
+                var btnScreen = document.body.addEventListener("click", (e) => {
+                    var vS = document.querySelector("#myvideo_mind_addict").play();
+                })
+                var v = document.querySelector("#myvideo_mind_addict").play();
+                console.log("mind_addict found")
+            })
+            document.querySelector("#mind_addict").addEventListener("markerLost", (e) => {
+                var v = document.querySelector("#myvideo_mind_addict").pause();
+                console.log("mind_addict lost")
+            })
+        </script>
+        <a-entity camera></a-entity>
+    </a-scene>
+
+</body>
